@@ -116,7 +116,8 @@ class DenseNet:
             save_path = self._save_path
         except AttributeError:
             save_path = 'saves/%s' % self.model_identifier
-            os.makedirs(save_path, exist_ok=True)
+            if not os.path.exists(save_path):
+                os.makedirs(save_path)
             save_path = os.path.join(save_path, 'model.chkpt')
             self._save_path = save_path
         return save_path
@@ -129,7 +130,8 @@ class DenseNet:
             logs_path = 'logs/%s' % self.model_identifier
             if self.renew_logs:
                 shutil.rmtree(logs_path, ignore_errors=True)
-            os.makedirs(logs_path, exist_ok=True)
+            if not os.path.exists(logs_path):
+                os.makedirs(logs_path)
             self._logs_path = logs_path
         return logs_path
 

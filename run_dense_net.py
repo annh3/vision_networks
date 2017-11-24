@@ -124,6 +124,7 @@ if __name__ == '__main__':
 
     # some default params dataset/architecture related
     train_params = get_train_params_by_name(args.dataset)
+    train_params["save_path"] = '/scratch/users/annhe/'
     print("Params:")
     for k, v in model_params.items():
         print("\t%s: %s" % (k, v))
