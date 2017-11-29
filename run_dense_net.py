@@ -124,6 +124,7 @@ if __name__ == '__main__':
 
     print "YO YO YO trying to find out what args.dataset is"
     print type(args.dataset)
+    print args.dataset
     # some default params dataset/architecture related
     train_params = get_train_params_by_name(args.dataset)
     train_params["save_path"] = '/scratch/users/annhe/'
